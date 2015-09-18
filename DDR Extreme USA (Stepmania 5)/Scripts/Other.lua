@@ -1,3 +1,27 @@
+function TextBannerAfterSet(self,param) 
+	local Title=self:GetChild("Title")
+	local Subtitle=self:GetChild("Subtitle")
+	local Artist=self:GetChild("Artist")
+
+	if Subtitle:GetText() == "" then
+		Title:maxwidth(140)
+
+		Subtitle:visible(false)
+
+		Artist:maxwidth(266)
+		Artist:y(16)
+	else
+		Title:maxwidth(140)
+		Title:zoom(0.8)
+
+		-- subtitle below title
+		Subtitle:visible(false)
+		Subtitle:zoom(0.8)
+		Subtitle:maxwidth(320)
+
+		Artist:maxwidth(266)
+		Artist:y(16)
+	end
 function LoadStepsDisplayGameplayFrame(self,player)
 	local difficultyStates = {
 		Difficulty_Beginner	 = 0,
